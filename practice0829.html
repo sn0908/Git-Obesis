@@ -1,0 +1,791 @@
+<!--어떤 사물이나 개념을 소프트웨어적으로 표현하기 위해 사용하는 문법적 수단. 자바스크립트 코드 내에서 객체란 '값 또는 기능을 가지고 있는 데이터'이다.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리배치도</title>
+    <!-- <SCRIPT language="JavaScript">
+        alert("회사 자리배치도입니다!");
+    </SCRIPT> -->
+    <style>         
+        .tbl {                        
+            margin: 5%;                      
+            height: 800px;
+            border-collapse: collapse;                          
+        }
+      
+        .tbl th, td {
+            border: 1px solid black;                        
+            text-align: center;            
+        } 
+
+/* *{margin:0;padding:0;} */
+.hidden{display: none;}
+#bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+#popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+#popup > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup-text{
+    margin: 20px 0;
+}
+.button{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg1{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup1{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup1 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup1-text{
+    margin: 20px 0;
+}
+.button1{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg2{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup2{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup2 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup2-text{
+    margin: 20px 0;
+}
+.button2{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg3{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup3{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup3 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup3-text{
+    margin: 20px 0;
+}
+.button3{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg4{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup4{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup4 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup4-text{
+    margin: 20px 0;
+}
+.button4{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg5{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup5{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup5 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup5-text{
+    margin: 20px 0;
+}
+.button5{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg6{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup6{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup6 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup6-text{
+    margin: 20px 0;
+}
+.button6{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg7{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup7{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup7 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup7-text{
+    margin: 20px 0;
+}
+.button7{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg8{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup8{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup8 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup8-text{
+    margin: 20px 0;
+}
+.button8{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+#bg9{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#popup9{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    height: auto;
+}
+
+#popup9 > h3{
+    border-bottom: 2px solid rgb(77, 77, 77);
+    padding: 10px 0;
+}
+#popup9-text{
+    margin: 20px 0;
+}
+.button9{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+    </style>
+</head>
+<body>        
+    <!-- <form name="login">
+        Username<input type="text" name="userid">
+        Password<input type="password" name="userpassword">
+        <div><input type="button" onclick="check(this.form)" value="Login">
+            <input type="reset" value="Cancel">
+        </div>
+    </form> -->
+    
+    <form id="search-form">        
+        <input type="search" id="search">
+        <button id="searchBtn">search</button>
+        <br>
+        
+    </form>
+
+
+
+    <table id="list" class="tbl">        
+        <thead>            
+            <tr>
+                <th colspan="6" style="height:60px; font-size:30px; color: white; background-color: green;">자 리 배 치 도</th>                                                          
+            </tr>
+        </thead>
+        <tbody>            
+            <tr>
+                <th colspan="3" style="height:60px; font-size:25px; font-weight: bold; color: deepskyblue;">부회장님실</th>
+                <th colspan="3" style="height:60px; font-size:25px; font-weight: bold; color: blue;">
+                    오비시스<img src="image/오베시스.png" style="float:right; width:120px; height:40px;"></th>
+            <tr>
+                <th style="height:60px; width:130px;">좌석</th>
+                <td style="border-top-style: hidden; width:130px;"></td>
+                <td style="width:130px;">부회장</td>
+                <td style="width:250px;"><button id="go" class="button">이상국 대표</button>
+                    <div id="bg" class="hidden"></div>
+                    <div id="popup" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup-text">                 
+                            스마트페이먼츠
+                            <br>010-4852-6760
+                            <br>aaathis@obesis.net                        
+                            <br>aaathis@spayment.co.kr
+                        </div>
+                        <button id="exit" class="button">나가기</button></td>
+                    </div>
+                <td style="width:250px;"><button id="go1" class="button">이성채 의장</button>
+                    <div id="bg1" class="hidden"></div>
+                    <div id="popup1" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup1-text">                 
+                            Chairman
+                            <br>010-5574-3979                            
+                            <br>sc.lee@obesis.net                         
+                        </div>
+                        <button id="exit1" class="button">나가기</button></td>
+                    </div>
+                <td style="border-top-style: hidden; width:250px;"></td>                              
+            </tr>            
+            <tr>
+                <th colspan="3" style="height:60px; font-size:25px; font-weight: bold; color:green;">회의실</th>
+                <td colspan="3"></td>               
+            </tr>
+            <tr>
+                <th style="height:60px;">좌석</th>
+                <td style="border-top-style: hidden;" rowspan="3"><img src="image/테이블.png" style="width:100px;"></td>
+                <td>좌석</td>
+                <td style="border-top-style: hidden;"></td>
+                <td><button id="go2" class="button">이상훈 차장</button>
+                    <div id="bg2" class="hidden"></div>
+                    <div id="popup2" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup2-text">                 
+                            영업팀
+                            <br>010-9666-2575
+                            <br>solonggol77@obesis.net                        
+                        </div>
+                        <button id="exit2" class="button">나가기</button></td>
+                    </div>
+                <td style="border-top-style: hidden;"></td>                
+            </tr>
+            <tr>
+                <th style="height:60px;">좌석</th>                
+                <td>좌석</td>
+                <td>좌석</td>
+                <td></td>
+                <td><button id="go3" class="button">송민석 본부장</button>
+                    <div id="bg3" class="hidden"></div>
+                    <div id="popup3" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup3-text">                 
+                            영업팀
+                            <br>010-8497-2727
+                            <br>mir1108@obesis.net                         
+                        </div>
+                        <button id="exit3" class="button">나가기</button></td>
+                    </div>                
+            </tr>
+            <tr>
+                <th style="height:60px;">좌석</th>                
+                <td>좌석</td>
+                <td style="border-bottom-style: hidden;"></td>
+                <td>좌석</td>
+                <td style="border-bottom-style: hidden;"></td>                                
+            </tr>
+            <tr>
+                <th colspan="3" style="height:60px; font-size:25px; font-weight: bold; color: rgb(247, 147, 164);">개발실</th>
+                <td colspan="3"></td>                
+            </tr>
+            <tr>
+                <th style="height:60px; border-top-style: hidden;"></th>
+                <td><button id="go4" class="button">강우석 이사</button>
+                    <div id="bg4" class="hidden"></div>
+                    <div id="popup4" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup4-text">                 
+                            개발팀
+                            <br>010-5516-3693
+                            <br>wskang@obesis.net                      
+                        </div>
+                        <button id="exit4" class="button">나가기</button></td>
+                    </div>   
+                <td style="border-top-style: hidden;"></td>
+                <td style="border-top-style: hidden;"></td>
+                <td>좌석</td>
+                <td style="border-top-style: hidden;"></td>                
+            </tr>
+            <tr>
+                <th style="height:60px;"><button id="go8" class="button">이상진 과장</button>
+                    <div id="bg8" class="hidden"></div>
+                    <div id="popup8" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup8-text">                 
+                            개발팀
+                            <br>010-6862-6236
+                            <br>idealjin87@obesis.net                      
+                        </div>
+                        <button id="exit8" class="button">나가기</button></th>
+                    </div>
+                <td rowspan="3"></td>
+                <td><button id="go5" class="button">김승남 과장</button>
+                    <div id="bg5" class="hidden"></div>
+                    <div id="popup5" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup5-text">                 
+                            개발팀
+                            <br>010-2410-8480
+                            <br>@obesis.net                         
+                        </div>
+                        <button id="exit5" class="button">나가기</button></td>
+                    </div>   
+                <td><button id="go9" class="button">김태진 부장</button>
+                    <div id="bg9" class="hidden"></div>
+                    <div id="popup9" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup9-text">                 
+                            경영관리본부팀
+                            <br>010-9627-9988
+                            <br>taichen2k@obesis.net                      
+                        </div>
+                        <button id="exit9" class="button">나가기</button></td>
+                <td rowspan="2"></td>
+                <td><button id="go6" class="button">임재한 과장</button>
+                    <div id="bg6" class="hidden"></div>
+                    <div id="popup6" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup6-text">                 
+                            영업팀
+                            <br>010-7542-5998
+                            <br>obesis1@obesis.net                         
+                        </div>
+                        <button id="exit6" class="button">나가기</button></td>
+                    </div>                
+            </tr>
+            <tr>
+                <th style="height:60px;">좌석</th>                
+                <td>좌석</td>
+                <td>좌석</td>                
+                <td><button id="go7" class="button">조봉진 부장</button>
+                    <div id="bg7" class="hidden"></div>
+                    <div id="popup7" class="hidden">
+                        <h3>프로필</h3>
+                        <div id="popup6-text">                 
+                            스마트페이먼츠
+                            <br>010-8691-3563
+                            <br>sanbong@spayment.co.kr                        
+                        </div>
+                        <button id="exit7" class="button">나가기</button></td>
+                    </div>                  
+            </tr>    
+            <tr>
+                <th style="height:60px;">좌석</th>                
+                <td style="border-left-style: hidden;"></td>
+                <td style="border-bottom-style: hidden;"></td>
+                <td>좌석</td>
+                <td style="border-bottom-style: hidden;"></td>                
+            </tr>    
+            <tr>
+                <th rowspan="2" colspan="3" rowspan="2" style="height:60px; font-size:25px; font-weight: bold;">서버 관리실</th>
+                <td colspan="3"></td>
+            <tr>
+                <th style="border-top-style: hidden;"></th>
+                <td style="height:20px;">출입문</td>
+                <td style="border-top-style: hidden;"></td>                                
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // const select = document.querySelector('select')
+        // const button = document.querySelector('button')
+
+        // button.addEventListener('click', function(){
+        //     console.log(select.value)
+        //     let result;
+        //     result = select.value == "developer" ?
+        //     "정답입니다!" :
+        //     "잘 못 선택하셨습니다!"
+        //     alert(result)
+        // })      
+        
+        const go = document.querySelector("#go");
+        const bg = document.querySelector("#bg");
+        const popup = document.querySelector("#popup");
+        const exit = document.querySelector("#exit");
+
+        go.addEventListener("click",function(){
+            bg.classList.remove("hidden");
+            popup.classList.remove("hidden");
+        });
+        exit.addEventListener("click",function(){
+            bg.classList.add("hidden");
+            popup.classList.add("hidden");
+        });
+
+        const go1 = document.querySelector("#go1");
+        const bg1 = document.querySelector("#bg1");
+        const popup1 = document.querySelector("#popup1");
+        const exit1 = document.querySelector("#exit1");
+
+        go1.addEventListener("click",function(){            
+            bg1.classList.remove("hidden");
+            popup1.classList.remove("hidden");
+        });
+        exit1.addEventListener("click",function(){
+            bg1.classList.add("hidden");
+            popup1.classList.add("hidden");
+        });
+
+        const go2 = document.querySelector("#go2");
+        const bg2 = document.querySelector("#bg2");
+        const popup2 = document.querySelector("#popup2");
+        const exit2 = document.querySelector("#exit2");
+
+        go2.addEventListener("click",function(){            
+            bg2.classList.remove("hidden");
+            popup2.classList.remove("hidden");
+        });
+        exit2.addEventListener("click",function(){
+            bg2.classList.add("hidden");
+            popup2.classList.add("hidden");
+        });
+
+        const go3 = document.querySelector("#go3");
+        const bg3 = document.querySelector("#bg3");
+        const popup3 = document.querySelector("#popup3");
+        const exit3 = document.querySelector("#exit3");
+
+        go3.addEventListener("click",function(){            
+            bg3.classList.remove("hidden");
+            popup3.classList.remove("hidden");
+        });
+        exit3.addEventListener("click",function(){
+            bg3.classList.add("hidden");
+            popup3.classList.add("hidden");
+        });
+
+        const go4 = document.querySelector("#go4");
+        const bg4 = document.querySelector("#bg4");
+        const popup4 = document.querySelector("#popup4");
+        const exit4 = document.querySelector("#exit4");
+
+        go4.addEventListener("click",function(){            
+            bg4.classList.remove("hidden");
+            popup4.classList.remove("hidden");
+        });
+        exit4.addEventListener("click",function(){
+            bg4.classList.add("hidden");
+            popup4.classList.add("hidden");
+        });
+
+        const go5 = document.querySelector("#go5");
+        const bg5 = document.querySelector("#bg5");
+        const popup5 = document.querySelector("#popup5");
+        const exit5 = document.querySelector("#exit5");
+
+        go5.addEventListener("click",function(){            
+            bg5.classList.remove("hidden");
+            popup5.classList.remove("hidden");
+        });
+        exit5.addEventListener("click",function(){
+            bg5.classList.add("hidden");
+            popup5.classList.add("hidden");
+        });
+
+        const go6 = document.querySelector("#go6");
+        const bg6 = document.querySelector("#bg6");
+        const popup6 = document.querySelector("#popup6");
+        const exit6 = document.querySelector("#exit6");
+
+        go6.addEventListener("click",function(){            
+            bg6.classList.remove("hidden");
+            popup6.classList.remove("hidden");
+        });
+        exit6.addEventListener("click",function(){
+            bg6.classList.add("hidden");
+            popup6.classList.add("hidden");
+        });
+
+        const go7 = document.querySelector("#go7");
+        const bg7 = document.querySelector("#bg7");
+        const popup7 = document.querySelector("#popup7");
+        const exit7 = document.querySelector("#exit7");
+
+        go7.addEventListener("click",function(){            
+            bg7.classList.remove("hidden");
+            popup7.classList.remove("hidden");
+        });
+        exit7.addEventListener("click",function(){
+            bg7.classList.add("hidden");
+            popup7.classList.add("hidden");
+        });
+                
+        const go8 = document.querySelector("#go8");
+        const bg8 = document.querySelector("#bg8");
+        const popup8 = document.querySelector("#popup8");
+        const exit8 = document.querySelector("#exit8");
+
+        go8.addEventListener("click",function(){            
+            bg8.classList.remove("hidden");
+            popup8.classList.remove("hidden");
+        });
+        exit8.addEventListener("click",function(){
+            bg8.classList.add("hidden");
+            popup8.classList.add("hidden");
+        });
+
+        const go9 = document.querySelector("#go9");
+        const bg9 = document.querySelector("#bg9");
+        const popup9 = document.querySelector("#popup9");
+        const exit9 = document.querySelector("#exit9");
+
+        go9.addEventListener("click",function(){            
+            bg9.classList.remove("hidden");
+            popup9.classList.remove("hidden");
+        });
+        exit9.addEventListener("click",function(){
+            bg9.classList.add("hidden");
+            popup9.classList.add("hidden");
+        });
+        
+        
+        // window.onload = function(){
+        // window.open("","", "width=300, height=300");
+        // }
+
+        // function showPopUp(){
+        //     var width = 500;
+        //     var height = 500;
+        // }
+    </script>
+    
+    <!-- <ul>
+    <li>회사 구성원</li>    
+    <a href="viceChairman.html" target="_blank">의장님</a>
+    <a href="directorGeneral.html" target="_blank">본부장님</a>
+    <p></p>
+    <li>회사에서 가장 호감도가 높은 사람은?</li>
+    <select>        
+        <option value="viceChairman">부회장</option>
+        <option value="chairman">이성채 의장</option>
+        <option value="ceo">이상국 대표</option>
+        <option value="directorGeneral">송민석 본부장</option>
+        <option value="director">강우석 이사</option>
+        <option value="managerOne">조봉진 부장</option>
+        <option value="managerTwo">김태진 부장</option>
+        <option value="generalManager">이상훈 차장</option>
+        <option value="sectionchief">임재한 과장</option>
+        <option value="developer">김승남 과장</option>
+    </select>
+    <button>PICK</button>
+    <p></p>   
+    </ul>  -->
+
+    <!-- <button id="go" class="button">눌러주세요</button>
+    <div id="bg" class="hidden"></div>
+    <div id="popup" class="hidden">
+        <h3>OBESIS</h3>
+        <div id="popup-text">                 
+            반갑습니다
+            <br>안녕하세요 오비시스입니다
+            <br>안녕하세요 오비시스입니다
+            <br>안녕하세요 오비시스입니다            
+        </div>
+        <button id="exit" class="button">나가기</button> -->    
+</body>
+</html>
